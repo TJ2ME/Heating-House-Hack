@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="">
-    <title>Heating House Hack by T(-1)ME</title>
+    <title>Weather or Not by T(-1)ME</title>
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/font-awesome.min.css" rel="stylesheet">
       <link href="css/main.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Heating House Hack</a>
+          <a class="navbar-brand" href="#">Weather or Not</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right">
@@ -37,9 +37,9 @@
       </div>
     </nav>
     
-    <div class="jumbotron topDiv">
+    <div class="jumbotron topDiv" id="heroBG">
         <div class="container"> 
-            <h1 class="text-center">Heating House Hack</h1> 
+            <h1 class="text-center">Weather or Not</h1> 
             <p class="text-center">Occupy 8-bit sartorial, master cleanse direct trade Schlitz pop-up hella retro Shoreditch jean shorts. Tumblr ennui chillwave keytar gastropub salvia photo booth. Tofu Intelligentsia gastropub stumptown tote bag, synth Bushwick asymmetrical you probably haven't heard of them cornhole. Street art banh mi put a bird on it, heirloom High Life Austin quinoa swag tousled Pinterest. Forage aesthetic Neutra, swag you probably haven't heard of them synth kale chips street art Bushwick shabby chic. </p>
             <br>
             <p class="text-center">
@@ -50,17 +50,45 @@
     </div>
       
     <div class="container text-center">
-        <h1>System Control</h1>
+        <h1>Manual System Control</h1>
         <hr>
+        <div class="alert alert-danger alert-dismissible fade in manualHeat manualCtrlConfirm" role="alert">
+          <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <p>The furnace is starting. The house will be warm soon!</p>
+        </div>
+
+        <div class="alert alert-info alert-dismissible fade in manualAC manualCtrlConfirm" role="alert">
+          <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <p>The air condition is starting. The house will be cool soon!</p>
+        </div>
+
+        <div class="alert alert-success alert-dismissible fade in manualOff manualCtrlConfirm" role="alert">
+          <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <p>Shutting down systems. Time to save that money!</p>
+        </div>
+
+        <div class="row">
+          <h4><p id="statusText">System Status Unknown</p></h4>
+        </div>
+
         <div>
-            <button type="button" class="btn btn-danger btn-lg"><p class="buttonText"><div class="buttonText">Heat On</div></button>   
-            <button type="button" class="btn btn-info btn-lg"><p class="buttonText"><div class="buttonText">A/C On</div></button>
-            <button type="button" class="btn btn-warning btn-lg"><p class="buttonText"><div class="buttonText">Systems Off</div></button>
+            <button type="button" id="forceHeat" class="btn btn-danger btn-lg"><p class="buttonText">Turn on Heat</button>   
+            <button type="button" id="forceAC" class="btn btn-info btn-lg"><p class="buttonText">Turn on A/C</button>
+            <button type="button" id="forceOff" class="btn btn-warning btn-lg"><p class="buttonText">Turn of Systems</button>
         </div>
         
         
         <h1>Today's Weather</h1>
         <hr>
+        <div class="alert alert-danger alert-dismissible fade in alertHeat autoCtrlConfirm" role="alert">
+          <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <p>The furnace is starting. The house will be warm soon!</p>
+        </div>
+
+        <div class="alert alert-info alert-dismissible fade in alertCold autoCtrlConfirm" role="alert">
+          <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <p>The air condition is starting. The house will be cool soon!</p>
+        </div>
 
         <div class="row">
             <div class="col-xs-3"><h3>Date</h3></div>
@@ -75,6 +103,11 @@
             <div class="col-xs-3" id="todayLow">Placeholder Humidity</div>
             <div class="col-xs-3" id="todayPOP">Placeholder Details</div>
           </div>
+        </div>
+        <div class="row">
+          <button type="button" id="heatCtrl" class="btn btn-danger btn-md"><p class="buttonText">Turn on Heat?</button>   
+          <button type="button" id="acCtrl" class="btn btn-info btn-md"><p class="buttonText">Turn on A/C?</button>
+          <button type="button" id="ignoreCtrl" class="btn btn-default btn-md"><p class="buttonText">Ignore</button>
         </div>
         
         
