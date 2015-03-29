@@ -71,7 +71,7 @@ function loadData() {
 var myVar;
 function reloadWeather() {
 
- myVar = setTimeout(loadData, 10000);
+ myVar = setTimeout(loadData, 60000);
 
 } 
 
