@@ -17,13 +17,14 @@ function reloadWeather() {
       for(var index = 0; index < forecast.length; ++index) {
             var day = forecast[index];
           
-            var new_row = table_row_template.clone();
+            var new_row = $('.table-row-template').clone();
 
-            new_row.find('#day').text(day['day']);
-            new_row.find('#high').text(day['high']);
-            new_row.find('#low').text(day['low']);
-
-            table.append(new_row);
+            new_row.find('#foreDate').text(day['day']);
+            new_row.find('#foreHigh').text(day['high']);
+            new_row.find('#foreLow').text(day['low']);
+            new_row.find('#foreDetails').text(day['text']);
+          
+            $('#forecast').append(new_row);
         
 
       };
@@ -33,7 +34,7 @@ function reloadWeather() {
       
 
     });
-  }, 2000);
+  }, 30000);
 
 
 } 

@@ -1,0 +1,52 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+.topDiv {
+    padding-top: 70px;
+}
+
+.navbar {
+    padding: 10px 0 10px 0;
+    background-color: #eee;
+    border-bottom: none;
+}
+
+@media (max-width: 767px) {
+    .collapsed {
+        background-color: #eee;
+    }
+}
+
+li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #FFFF00;
+    color: #1875D1 !important;
+}
+
+.icon-bar {
+    background-color: #9d9d9d !important;
+}
+
+.navbar-header > a:hover, .navbar-header > a:focus {
+    background-color: #FFFF00;
+    color: #1875D1 !important;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #eee;
+}
+
+.fa {
+    margin-top: 10px;
+}
+
+.buttonText {
+    margin: auto 0;
+}
+
+p > button {
+    min-width: 150px;
+}
+
+.weather-table {
+    width: 100%;
+}
