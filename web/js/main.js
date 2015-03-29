@@ -3,17 +3,14 @@ var table_row_template = $('.table-row-template').remove(),
 
 $(document).ready(function(){
   $('.btn-md').hide(0); 
+  loadData();
 });
 
 function toCel(num) {
   return Math.round((num -32) * 5/9);
 }
 
-reloadWeather();
-var myVar;
-function reloadWeather() {
-
- myVar = setTimeout(function() {
+function loadData() {
 
     API.fetch_weather(function (response) {
 
@@ -68,10 +65,25 @@ function reloadWeather() {
       
 
     });
-  }, 10000);
+  }
 
+
+var myVar;
+function reloadWeather() {
+
+ myVar = setTimeout(loadData, 10000);
 
 } 
+
+$(window).scroll(function (event) {
+    var height = $(window).scrollTop();
+    if(height == 0) {
+      $('.navbar').css("background-color", "transparent");
+      $('.collapsed').css("background-color", "#eee");
+    } else {
+      $('.navbar').css("background-color", "#eee");
+    }
+});
 
 var sysStat = $('#statusText');
 
@@ -93,19 +105,16 @@ $('#ignoreCtrl').click(function(){
 
  $('#forceHeat').click(function(){
     $('.manualHeat').fadeIn();
-    $('.btn-md').fadeOut();
     sysStat.text("Heat is on.");
  });
 
 $('#forceAC').click(function(){
   $('.manualAC').fadeIn();
-  $('.btn-md').fadeOut();
   sysStat.text("A/C is on.");
  });
 
 $('#forceOff').click(function(){
   $('.manualOff').fadeIn();
-  $('.btn-md').fadeOut();
   sysStat.text("Systems are off.");
  });
 
