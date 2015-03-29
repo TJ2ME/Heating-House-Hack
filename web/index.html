@@ -65,14 +65,16 @@
         <div class="row">
             <div class="col-xs-3"><h3>Date</h3></div>
             <div class="col-xs-3"><h3>High Temp. (&deg;C)</h3></div>
-            <div class="col-xs-3"><h3>Low Temp. (&deg;C)</h3></div>
-            <div class="col-xs-3"><h3>POP (%)</h3></div>
+            <div class="col-xs-3"><h3>Humidity Index</h3></div>
+            <div class="col-xs-3"><h3>Details</h3></div>
         </div>
-        <div class="row">
+        <div id="currentDay" class="row">
+          <div class="current-row-template">
             <div class="col-xs-3" id="todayDate">Placeholder Date</div>
-            <div class="col-xs-3" id="todayHigh">Placeholder High Temp.</div>
-            <div class="col-xs-3" id="todayLow">Placeholder Low Temp.</div>
-            <div class="col-xs-3" id="todayPOP">Placeholder POP (%)</div>
+            <div class="col-xs-3" id="todayTemp">Placeholder Temp.</div>
+            <div class="col-xs-3" id="todayLow">Placeholder Humidity</div>
+            <div class="col-xs-3" id="todayPOP">Placeholder Details</div>
+          </div>
         </div>
         
         
@@ -85,11 +87,13 @@
             <div class="col-xs-3"><h3>Low Temp. (&deg;C)</h3></div>
             <div class="col-xs-3"><h3>Details</h3></div>
         </div>
-        <div id="forecast" class="row table-row-template">
-            <div class="col-xs-3" id="foreDate">Placeholder Date</div>
-            <div class="col-xs-3" id="foreHigh">Placeholder High Temp.</div>
-            <div class="col-xs-3" id="foreLow">Placeholder Low Temp.</div>
-            <div class="col-xs-3" id="foreDetails">Placeholder Details</div>
+        <div id="forecast" class="row">
+          <div class="table-row-template">
+              <div class="col-xs-3" id="foreDate">Placeholder Date</div>
+              <div class="col-xs-3" id="foreHigh">Placeholder High Temp.</div>
+              <div class="col-xs-3" id="foreLow">Placeholder Low Temp.</div>
+              <div class="col-xs-3" id="foreDetails">Placeholder Details</div>
+          </div>
         </div>
     
         <h1>Override</h1>
@@ -105,7 +109,7 @@
         </div><!--//container-->
     </footer><!--//footer-->
     <script src="/zerver/API.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
   </body>
