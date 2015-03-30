@@ -83,3 +83,7 @@ h4 {
 .listBullets {
     font-size: 18px;
 }
+
+h3 {
+    word-wrap: break-word;
+}

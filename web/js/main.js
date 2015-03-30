@@ -37,7 +37,7 @@ function loadData() {
               $('#ignoreCtrl').fadeIn();
             } 
 
-            if(toCel(condition['temp']) <= 0) {
+            if(toCel(condition['temp']) < 15) {
               $('#heatCtrl').fadeIn();
               $('#ignoreCtrl').fadeIn();
             } 
@@ -71,7 +71,7 @@ function loadData() {
 var myVar;
 function reloadWeather() {
 
- myVar = setTimeout(loadData, 60000);
+ myVar = setTimeout(loadData, 6000);
 
 } 
 
