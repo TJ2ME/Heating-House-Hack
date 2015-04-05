@@ -73,6 +73,7 @@ p > button {
       rgba(0, 0, 0, 0.5)
     ),
     url(/img/heroBG.jpg);
+	background-size: cover;
 }
 
 h4 {
